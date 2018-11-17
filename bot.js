@@ -11,9 +11,9 @@ const gif = require("gif-search");
 const client = new Discord.Client({disableEveryone: true});
  
 client.on('ready', () => {
-    client.user.setGame('Type iR25RR','https://www.twitch.tv/RezfixServer');
+    client.user.setGame('Music iR25RR','https://www.twitch.tv/RezfixServer');
     console.log('---------------');
-    console.log('iR25RR Online')
+    console.log('-play Online')
     console.log('---------------')
   });
 
