@@ -4,7 +4,7 @@ const clinet = new Discord.Client();
 client.on('ready', () => {
     client.user.setGame('RezfixMC System -help','https://www.twitch.tv/RezfixServer');
     console.log('---------------');
-    console.log('RezfixMC Online')
+    console.log('ProBot')
     console.log('---------------')
   });
 
