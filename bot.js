@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const client = new Discord.Client();
+const clinet = new Discord.Client();
  
 client.on('ready', () => {
     client.user.setGame('RezfixMC System -help','https://www.twitch.tv/RezfixServer');
