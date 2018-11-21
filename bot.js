@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const clinet = new Discord.Client();
  
 client.on('ready', () => {
-    client.user.setGame('RezfixMC System -help','https://www.twitch.tv/RezfixServer');
+    client.user.setGame('RezfixMC ProBot','https://www.twitch.tv/RezfixServer');
     console.log('---------------');
     console.log('ProBot')
     console.log('---------------')
