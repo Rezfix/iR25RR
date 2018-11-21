@@ -230,7 +230,6 @@ client.on("message", message => {
 		} 
 	} 
 });
-var AsciiTable = require('ascii-data-table').default
 client.on('message', message =>{
 
     if(message.content == "#roles"){
