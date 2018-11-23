@@ -9,7 +9,7 @@ let profile = JSON.parse(fs.readFileSync("profile.json", "utf8"))
 
 client.on('ready', () => {
     client.user.setGame('Rezfix. System','https://www.twitch.tv/RezfixServer');
-      console.log('ريزفكس شغال');
+      console.log('Rezfix System');
       console.log(`Logged in as * [ " ${client.user.username} " ] servers! [ " ${client.guilds.size} " ]`);
       console.log(`Logged in as * [ " ${client.user.username} " ] Users! [ " ${client.users.size} " ]`);
       console.log(`Logged in as * [ " ${client.user.username} " ] channels! [ " ${client.channels.size} " ]`);
@@ -532,7 +532,7 @@ client.on('message', ra3d => {
 //Help
 
 client.on("message", message => {
-  if (message.content === "+help") {
+  if (message.content === "-help") {
          message.react("✅")
             message.react("📬")
    const embed = new Discord.RichEmbed() 
