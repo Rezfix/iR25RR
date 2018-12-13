@@ -9,7 +9,7 @@ let profile = JSON.parse(fs.readFileSync("profile.json", "utf8"))
 
 client.on('ready', () => {
     client.user.setGame('Tree Manager Bot. For Help -help','https://www.twitch.tv/RezfixServer');
-      console.log('Rezfix. System');
+      console.log('Tree Maanger');
       console.log(`Logged in as * [ " ${client.user.username} " ] servers! [ " ${client.guilds.size} " ]`);
       console.log(`Logged in as * [ " ${client.user.username} " ] Users! [ " ${client.users.size} " ]`);
       console.log(`Logged in as * [ " ${client.user.username} " ] channels! [ " ${client.channels.size} " ]`);
