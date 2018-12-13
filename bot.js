@@ -8,7 +8,7 @@ const prefix = "-"
 let profile = JSON.parse(fs.readFileSync("profile.json", "utf8"))
 
 client.on('ready', () => {
-    client.user.setGame('Rezfix. System |-help','https://www.twitch.tv/RezfixServer');
+    client.user.setGame('Tree Manager Bot. For Help -help','https://www.twitch.tv/RezfixServer');
       console.log('Rezfix. System');
       console.log(`Logged in as * [ " ${client.user.username} " ] servers! [ " ${client.guilds.size} " ]`);
       console.log(`Logged in as * [ " ${client.user.username} " ] Users! [ " ${client.users.size} " ]`);
@@ -18,7 +18,7 @@ client.on('ready', () => {
 //AutoRole
 
 client.on('guildMemberAdd', (member) => {
-  member.addRole(member.guild.roles.find('name', '✱| Member Of RezfixMC'));
+  member.addRole(member.guild.roles.find('name', 'Tree.'));
   });	
 
 //Report
