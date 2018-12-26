@@ -8,8 +8,8 @@ const prefix = "-"
 let profile = JSON.parse(fs.readFileSync("profile.json", "utf8"))
 
 client.on('ready', () => {
-    client.user.setGame('Tree Manager Bot. For Help -help','https://www.twitch.tv/RezfixServer');
-      console.log('Tree Maanger');
+    client.user.setGame('www.NextaHost.com','https://www.twitch.tv/RezfixServer');
+      console.log('NextaCommunity');
       console.log(`Logged in as * [ " ${client.user.username} " ] servers! [ " ${client.guilds.size} " ]`);
       console.log(`Logged in as * [ " ${client.user.username} " ] Users! [ " ${client.users.size} " ]`);
       console.log(`Logged in as * [ " ${client.user.username} " ] channels! [ " ${client.channels.size} " ]`);
@@ -18,7 +18,7 @@ client.on('ready', () => {
 //AutoRole
 
 client.on('guildMemberAdd', (member) => {
-  member.addRole(member.guild.roles.find('name', 'Tree.'));
+  member.addRole(member.guild.roles.find('name', 'Member.'));
   });	
 
 //Report
@@ -67,10 +67,10 @@ client.on("message", (message) => {
   /// ALPHA CODES
  if (message.content.startsWith("-new")) {     /// ALPHA CODES
       const reason = message.content.split(" ").slice(1).join(" ");     /// ALPHA CODES
-      if (!message.guild.roles.exists("name", "Support » RezfixMC")) return message.channel.send(`This server doesn't have a \`Support Team\` role made, so the ticket won't be opened.\nIf you are an administrator, make one with that name exactly and give it to users that should be able to see tickets.`);
+      if (!message.guild.roles.exists("name", "Support.")) return message.channel.send(`This server doesn't have a \`Support Team\` role made, so the ticket won't be opened.\nIf you are an administrator, make one with that name exactly and give it to users that should be able to see tickets.`);
       if (message.guild.channels.exists("name", "ticket-{message.author.id}" + message.author.id)) return message.channel.send(`You already have a ticket open.`);    /// ALPHA CODES
       message.guild.createChannel(`ticket-${message.author.username}`, "text").then(c => {
-          let role = message.guild.roles.find("name", "Support » RezfixMC");
+          let role = message.guild.roles.find("name", "Support.");
           let role2 = message.guild.roles.find("name", "@everyone");
           c.overwritePermissions(role, {
               SEND_MESSAGES: true,
@@ -123,7 +123,7 @@ if (message.content.startsWith("-close")) {
 
 client.on('message', message => {
   if(message.content.includes('discord.gg')){
-                                          if(!message.channel.guild) return message.reply('** advertising me on DM ? 🤔   **');
+                                          if(!message.channel.guild) return message.reply('** ممنوع نشر الروابط 🤔   **');
       if (!message.member.hasPermissions(['ADMINISTRATOR'])){
       message.delete()
   return message.reply(`** ممنوع نشر الروابط :angry: ! **`)
@@ -226,7 +226,7 @@ client.on('message', message => {
 client.on('guildCreate', guild => {
   var embed = new Discord.RichEmbed()
   .setColor(0x5500ff)
-  .setDescription(`**شكراً لك لإضافه البوت الى سيرفرك https://discord.gg/H7QUyT**`)
+  .setDescription(`**شكراً لك لإضافه البوت الى سيرفرك https://discord.gg/tgkBmG**`)
       guild.owner.send(embed)
 });
 
