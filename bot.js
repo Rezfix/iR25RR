@@ -303,7 +303,6 @@ client.on('message', message =>{
           if(message.guild.roles.array()[i].id !== message.guild.id){
        data.push([i,`${message.guild.roles.filter(r => r.position == ros-i).map(r=>r.name)}`])
       }}
-      let res = AsciiTable.table(data)
 
       message.channel.send(`**\`\`\`xl\n${res}\`\`\`**`);
   }
@@ -426,7 +425,7 @@ message.react("❌")
           .addField('``My ID``' , `[ ${client.user.id} ]` , true)
           .addField('``My Prefix``' , `[ - ]` , true)
           .addField('``My Language``' , `[ Java Script ]` , true)
-          .setFooter('By | GGAMV')
+          .setFooter('By | NextaCommunity')
   })
 }
 });
@@ -603,7 +602,7 @@ client.on('message', msg => {
     if(msg.member.hasPermission("MANAGE_MESSAGES")) {
     if (textxt == "") {
         msg.delete().then
-    msg.channel.send("***```Supply A Number 👌```***").then(m => m.delete(3000));
+    msg.channel.send("***لا يوجد عدد محدد```***").then(m => m.delete(3000));
 } else {
     msg.delete().then
     msg.delete().then
@@ -636,6 +635,56 @@ client.on("message", async message => {
   }
   });
 
+client.on('message',async msg => {//Toxic Codes
+  var p = "-";//Toxic Codes
+  if(msg.content.startsWith(p + "setuser")) {//Toxic Codes
+  if(!msg.guild.member(msg.author).hasPermissions('MANAGE_CHANNELS')) return msg.reply('❌ **ليس لديك صلاحيه**');//Toxic Codes
+  if(!msg.guild.member(client.user).hasPermissions(['MANAGE_CHANNELS'])) return msg.reply('❌ **البوت لا يمتلك صلاحية**');//Toxic Codes
+  msg.guild.createChannel('Members → ${client.users.size}` , 'voice').then(time => {//Toxic Codes
+    });//Toxic Codes
+
+  }
+ 
+});
+
+client.on("message", msg => { //Toxic Codes CopyRight & Me 92.♥#0092
+  if(msg.author.bot) return;
+  if(msg.channel.type === 'dm') return;
+let prefix = '-'; //البرفكس
+let msgarray = msg.content.split(" ");
+let cmd = msgarray[0];
+let args = msgarray.slice(1);
+if(cmd === `${prefix}warn`){//الامر
+  
+  
+
+  let rUser = msg.guild.member(msg.mentions.users.first() || msg.guild.members.get(args[0]));
+if(!rUser) return msg.channel.send("Couldn't find users.");
+    let reason = args.join(" ").slice(22);
+
+    let reportembed = new Discord.RichEmbed()
+    .setDescription("Warn")
+    .setColor("BLACK")
+    .addField("Warn User", `${rUser} with ID: ${rUser.id}`)
+    .addField("Warn By", `${msg.author} with ID: ${msg.author.id}`)
+    .addField("Channel", msg.channel)
+    .addField("Time", msg.createdAt)
+    .addField("Reason",`${reason}`)
+    
+    
+    let reportchannel = msg.guild.channels.find(`name`,"اسم الروم"); //حط هنا اسم الروم الي يوريك بعض المعلومات
+    if(!reportchannel) return msg.channel.send("Couldn't find `warns` channel. "); //ط هنا اسم الروم الي يوريك بعض المعلومات
+    
+    msg.delete().catch(O_o=>{});
+    reportchannel.send(reportembed);
+    let role = msg.guild.roles.find(`name`, 'اسم الرتبة'); //حط هنا اسم الرتبة
+    if(!role) return msg.guild.channel.send("Could't find `اسم الرتبة` role."); //حط هنا اسم الرتبة
+    rUser.addRole(role);
+    
+        return;
+    }
+    }); //Toxic Codes
+
   client.on('message' , async message => {
     if(message.author.bot) return;
     var prefix = "-";     
@@ -645,7 +694,7 @@ client.on("message", async message => {
   const embed = new Discord.RichEmbed() 
       .setColor("RANDOM")
       .setFooter('Requested by '+message.author.username, message.author.avatarURL)
-      .setAuthor("Voice Online", "https://media.discordapp.net/attachments/502612779908464650/515552024029560853/Rezfix.png")
+      .setAuthor("Voice Online", "https://cdn.discordapp.com/attachments/527460367513944074/527744824212979724/15b08f0cfd08161c96fc3aa1b662f218.jpeg")
           .setFooter(` العدد : ${guild.members.filter(member => member.voiceChannel).size}`)
       .setDescription(`\n${guild.members.filter(member => member.voiceChannel).map(m => m.user.tag).join('\n')}`);
     message.channel.sendEmbed(embed);
