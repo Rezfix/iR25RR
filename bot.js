@@ -9,7 +9,7 @@ let profile = JSON.parse(fs.readFileSync("profile.json", "utf8"))
 
 client.on('ready', () => {
     client.user.setGame('www.NextaHost.com','https://www.twitch.tv/RezfixServer');
-      console.log('NextaCommunity');
+      console.log('NextaHost');
       console.log(`Logged in as * [ " ${client.user.username} " ] servers! [ " ${client.guilds.size} " ]`);
       console.log(`Logged in as * [ " ${client.user.username} " ] Users! [ " ${client.users.size} " ]`);
       console.log(`Logged in as * [ " ${client.user.username} " ] channels! [ " ${client.channels.size} " ]`);
