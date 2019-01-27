@@ -31,7 +31,7 @@ client.on('guildCreate', guild => {
 client.on('ready', function(){
     client.user.setStatus("dnd");
     var ms = 100000 ;
-    var setGame = [`help Servers ${client.guilds.size} `,`invite Users ${client.users.size}`];
+    var setGame = [`-help | https://Nexta.net SooN`];
     var i = -1;
     var j = 0;
     setInterval(function (){
