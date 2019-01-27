@@ -1501,7 +1501,6 @@ if(!args[0]) return message.reply('مرجو كتابة نص الدي تريد');
    
 /*short*/
 
-const shorten = require('isgd');
 client.on('message', message => {
  if (message.content.startsWith(prefix + 'short')) {
     let args = message.content.split(" ").slice(1);
