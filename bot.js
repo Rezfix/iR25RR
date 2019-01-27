@@ -1597,75 +1597,8 @@ google({ query: input, disableConsole: true }).then(results => {
 
 }});
 
-/*awsm*/
-let points = JSON.parse(fs.readFileSync('../json/awsm.json', 'utf8'));
-client.on('message', message => {
-if (!points[message.author.id]) points[message.author.id] = {
-	points: 0,
-  };
-if (message.content.startsWith(prefix + 'عواصم')) {
-	if(!message.channel.guild) return
-
-const type = require('../json/awsm.json');
-const item = type[Math.floor(Math.random() * type.length)];
-const filter = response => {
-    return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
-};
-message.channel.send('**لديك 15 ثانية لتجيب**').then(msg => {
-
-			
-msg.channel.send(`${item.type}`).then(() => {
-        message.channel.awaitMessages(filter, { maxMatches: 1, time: 15000, errors: ['time'] })
-        .then((collected) => {
-		message.channel.send(`${collected.first().author} ✅ **مبروك لقد كسبت نقطه
-لمعرفة نقطاك الرجاء كتابة !نقاطي**`);
-		console.log(`[Typing] ${collected.first().author} typed the word.`);
-			let userData = points[message.author.id];
-			userData.points++;
-          })
-          .catch(collected => {
-            message.channel.send(`:x: **خطأ حاول مرة اخرى**`);
-			console.log('[Typing] Error: No one type the word.');
-          })
-		})
-	})
-}
-});
-client.on('message', message => {
-if (message.content.startsWith(prefix + 'نقاطي')) {
-	if(!message.channel.guild) return
-	let userData = points[message.author.id];
-	let embed = new Discord.RichEmbed()
-    .setAuthor(`${message.author.tag}`, message.author.avatarURL)
-	.setColor('#000000')
-	.setDescription(`نقاطك: \`${userData.points}\``)
-	message.channel.sendEmbed(embed)
-  }
-  fs.writeFile("./json/awsmm.json", JSON.stringify(points), (err) => {
-    if (err) console.error(err)
-  })
-});
-
-var dat = JSON.parse("{}");
-function forEachObject(obj, func) {
-    Object.keys(obj).forEach(function (key) { func(key, obj[key]) });
-}
-client.on("ready", () => {
-    var guild;
-    while (!guild)
-        guild = client.guilds.get("537999137707393041");
-    guild.fetchInvites().then((data) => {
-        data.forEach((Invite, key, map) => {
-            var Inv = Invite.code;
-            dat[Inv] = Invite.uses;
-        });
-    });
-});
-
-
-
 client.on("guildMemberAdd", (member) => {
-    let channel = member.guild.channels.get("538018925502267393");
+    let channel = member.guild.channels.get("538751045497782302");
     if (!channel) {
         console.log("!the channel id it's not correct");
         return;
@@ -1676,7 +1609,7 @@ client.on("guildMemberAdd", (member) => {
     console.log('-');
     var guild;
     while (!guild)
-        guild = client.guilds.get("537999137707393041");
+        guild = client.guilds.get("538751045497782302");
     guild.fetchInvites().then((data) => {
         data.forEach((Invite, key, map) => {
             var Inv = Invite.code;
