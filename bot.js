@@ -1698,8 +1698,8 @@ message.channel.send('تم اعداد رتبه الرنبو بنجاح 🌈')//i
 client.on('ready', () => {
   setInterval(function(){
       client.guilds.forEach(g => {
-                  var role = g.roles.find('name', 'Rainbow ');
-                  if (role) {//Codes Server
+                  var role = g.roles.find('name', 'Rainbow');
+                  if (role) {
                       role.edit({color : "RANDOM"});
                   };
       });
