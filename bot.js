@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const fs = require('fs');
 const client = new Discord.Client();
-const config = require('../config.json');
 var prefix = "!";
 var dat = JSON.parse("{}");
 function forEachObject(obj, func) {
