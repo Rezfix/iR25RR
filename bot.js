@@ -1703,7 +1703,7 @@ client.on('ready', () => {
                       role.edit({color : "RANDOM"});
                   };
       });
-  }, 5000);
+  }, 10000);
 })
  
  
