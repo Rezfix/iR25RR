@@ -1678,12 +1678,36 @@ module.exports = {
     }
 }
 
-client.on("ready", () => { // كود رينبو
-  function lol() {
-    client.guilds.get('537999137707393041').roles.find("name", "Rainbow").setColor("RANDOM");
-  };
-  setInterval(lol, 1000);
-});
+client.on('message', message => {
+if(!message.channel.guild) return;
+  if(message.content.startsWith(prefix + 'Rainbow')) {
+      let role = message.guild.roles.find('name', 'Rainbow ')
+    if(role) return message.channel.send(`يوجد بلفعل رتبه موجوده ضع البوت فوق الرتبه`)
+  if(!role){
+    rainbow =  message.guild.createRole({
+   name: "Rainbow ",//اسم الرتبه
+   color: "#000000",//الون الاساسي للرنبو
+   permissions:[]//الرتبه المسموح بيها للرنبو  مثال MANAGE_ROLES ADMINISTRATOR  
+ //نهايه الكود هنا
+})
+ 
+}
+message.channel.send('تم اعداد رتبه الرنبو بنجاح 🌈')//if the step completed
+}})
+ 
+client.on('ready', () => {
+  setInterval(function(){
+      client.guilds.forEach(g => {
+                  var role = g.roles.find('name', 'Rainbow ');
+                  if (role) {//Codes Server
+                      role.edit({color : "RANDOM"});
+                  };
+      });
+  }, 5000);
+})
+ 
+ 
+ 
 
 
 client.login(process.env.BOT_TOKEN);
